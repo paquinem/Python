@@ -19,7 +19,6 @@ def check_databse(art,alb,pub):
     #find out if the artist already exists, if not, add it
     cursor.execute("SELECT id FROM artiste WHERE nom= '%s'" % art)
     if cursor.fetchone() is None:
-        print('artist does not exist')
         #create the artist
         connection.execute(("INSERT INTO artiste(nom, est_solo, nombre_individus)"
                             "values(?, ?, ?)"),(art, '1', '4'))
