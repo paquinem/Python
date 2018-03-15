@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <div class="center">
+	  <ul class="center">
+			{% for entrees in entree %}
+      
+      
+      <span name="date" value="{{entrees[3]}}"/>
+      <li class="center"><h2><a href="{{ url_for('month', matricule=matricule, mois=entrees[2], annee=entrees[1], depart=entrees[3]) }}"> {{ entrees[0] }}</a></h2>
+      {% else %}
+        <li>Aucune entree pour ce matricule.
+						
+	{% endfor %}
+		</ul>
+  </div>
+
+{% endblock %}

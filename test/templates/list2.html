@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+Liste des mois a l'emploi
+  {% for entrees in entree %}
+
+  <form action="{{ url_for('list2', matricule=matricule, entree=entree) }}" method=post>   
+		
+		<d1 class="center">
+      <dd><input type=hidden name="id_" value="{{ entrees[1] }}">
+      <dd><input type=hidden name="annee" value="{{ entrees[2] }}">
+      <dd><input type=hidden name="mois_chiffre" value="{{ entrees[3] }}">
+			<dd><input type=submit name="mois" value="{{ entrees[0] }}">
+
+		</d1>
+	</form>
+  {% else %}
+        <li>No data for this employee.</li>
+	{% endfor %}
+{% endblock %}

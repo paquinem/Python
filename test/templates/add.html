@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% if erreur %} <p class=erreur><strong>Error: </strong>{{ erreur }}{% endif %}
+
+  <form action="{{ url_for('add', matricule=matricule, date=date)  }}" method=post>   
+		
+		<d1 class="center">
+			<dt>Projet number:
+			<dd><input type=number name=numeroProjet required class="no-spinners"/>
+			<dt>Time spent (in minutes):	
+			<dd><input type=number name=nombreMinutes required class="no-spinners"/>	
+			<dd><input type=submit value=Ajouter>
+		</d1>
+	</form>
+	
+
+{% endblock %}
+		
+		
+

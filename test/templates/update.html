@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% if erreur %} <p class=erreur><strong>Error: </strong>{{ erreur }}{% endif %}
+
+  <form action="{{ url_for('update', matricule=matricule, date_du_jour=date_du_jour, id_=id_) }}" method=post>   
+		
+		<d1 class="center">
+			<dt>New value for time (in minutes):	
+			<dd><input type=number name=nombreMinutes required class="no-spinners">	
+			<dd><input type=submit value=Sauvegarder>
+		</d1>
+	</form>
+	
+
+{% endblock %}
+		
+		
+

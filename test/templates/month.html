@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="month">
+  <ul>
+    <li class="prev">
+      <a href="{{ url_for('month', matricule=matricule, mois=mois_prev)}}">&#10094;</a> </li>
+    <li class="next">
+      <a href="{{ url_for('month', matricule=matricule, mois=mois_next)}}">&#10095;</a></li>
+    <li>{{mois_lettre}}<br><span style="font-size:18px">{{annee}}</span></li>
+  </ul>
+</div>
+{% if entrees|length != 0 %}
+<ul class="weekdays">
+  <li>Dimanche</li>
+  <li>Lundi</li>
+  <li>Mardi</li>
+  <li>Mercredi</li>
+  <li>Jeudi</li>
+  <li>Vendredi</li>
+  <li>Samedi</li>
+</ul>
+
+<ul class="days">
+  {% if debut == 1 %}
+  <li></li>
+  {% elif debut == 2 %}
+  <li></li>
+  <li></li>
+  {% elif debut == 3 %}
+  <li></li>
+  <li></li>
+  <li></li>
+  {% elif debut == 4 %}
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  {% elif debut == 5 %}
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  {% elif debut == 6 %}
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+
+  {% endif %}
+  
+  {% for entree in entrees %}
+  <li> {{entree[0]}} 
+       {% if entree[1] != 'no data' %}
+         <a href="{{ url_for('day', matricule=matricule, date_du_jour= (mois+'-'+entree[0]|string) )}}">{{ entree[1] }}</a> 
+       {% endif %}
+ </li>
+  {% endfor %}
+  
+</ul>
+{% else %}
+ Aucune entree pour ce mois...
+{% endif %}
+
+{% endblock %}
