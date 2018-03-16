@@ -1,18 +1,199 @@
-body						{ font-family: sans-serif; background: #eee; }
-a, h1, h2				{ color: #377ba8; }
-h1, h2					{ font-family: 'Georgia', serif; margin: 0; }
-h1							{ border-bottom: 2px solide #eee; }
-h2							{ font-size: 1.2em; }
 
-.page						{ margin: 2em auto; width: 35em; border: 5px solide #ccc;
-									padding:0.8em; background: white; }
-.entries				{ list-style: none; margin: 0; padding: 0; }
-.entries li			{ margin: 0.8em 1.2em; }
-.entries li h2	{ margin-left: -1em; }
-.add-entry			{ font-size: 0.9em; border-bottom: 1px solide #ccc; }
-.add-entry d1		{ font-weight: bold; }
-.metanav				{ text-align: right; font-size: 0.8em; padding: 0.3em;
-									margin-bottom: 1em; background: #fafafa; }
-.flash					{ background: #cee5F5; padding: 0.5em;
-									border: 1px solide #aacbe2; }
-.error					{ background: #f0d6d6; padding: 0.5em; }
+body{ 
+font-family: 'Roboto', sans-serif; 
+background: #eee; 
+}
+
+a, h1, h2 { 
+color: #818b9b;
+}
+
+h1, h2{ 
+font-family: 'Roboto', sans-serif; 
+margin: 0; 
+}
+
+h1{
+border-bottom: 2px solid #eee; 
+}
+
+h2{ 
+font-size: 1.2em; 
+}
+
+input[type=text]{
+  margin-top: 50px;   
+  margin-bottom: 50px;
+     
+}
+
+h3{
+    color: #b7bec9;
+    font-family: 'Roboto', sans-serif;
+font-size: 0.8em;     
+}
+
+dd{
+    text-align: center;
+    padding: 1.2em;
+}
+
+.page{ 
+margin: 2em auto; 
+width: 35em; 
+border: 1px solid #ccc;
+padding:1.2em; 
+background: white; 
+}
+
+.entries{ 
+list-style: none; 
+margin: 0; 
+padding: 0; 
+}
+
+
+.extra{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.less_extra{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.entries2{ 
+list-style: none; 
+margin: 10px; 
+padding: 10px; 
+}
+
+.entries li{ 
+margin: 0.8em 1.2em; 
+}
+
+.entries li h2{
+margin-left: -1em; 
+}
+.add-entry{ 
+font-size: 0.9em; 
+border-bottom: 1px solid #ccc; 
+}
+
+
+.left{
+    text-align: right;
+}
+
+.right{
+    text-align: left;
+}
+
+
+.error{  
+background: #84a5d8; 
+padding: 0.5em; 
+}
+
+.button {
+    background-color: white;
+    border: 1px solid #ccc; 
+    color: #b7bec9;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button2 {
+    padding: 10px 24px;
+    background-color: #555555;
+    border: none; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    background-color: white; 
+    color: #555555;
+    border: 1px solid #555555;
+}
+
+.button3 {
+    background-color: white;
+    border: 1px solid #ccc; 
+    color: #b7bec9;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button3:hover {
+    background-color: #b7bec9; 
+    color: white;
+}
+
+.button4 {
+    background-color: white;
+    border: 1px solid #ccc; 
+    color: #b7bec9;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button4:hover {
+    background-color: #b7bec9; 
+    color: white;
+}
+
+.button:hover {
+    background-color: #b7bec9; 
+    color: white;
+}
+
+
+.button5 {
+    background-color: #b7bec9;
+    border: 1px solid #ccc; 
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button5:hover {
+    background-color: white;
+    color: #b7bec9;
+}
+
+
+.date{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: #A8B2B9;
+  font-size: 24px;
+  display: inline-block;
+}
