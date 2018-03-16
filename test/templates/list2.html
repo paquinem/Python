@@ -1,20 +1,25 @@
+<!--PAQE19528909-->
 {% extends "layout.html" %}
 
 {% block content %}
-Liste des mois a l'emploi
-  {% for entrees in entree %}
+<div class=page>
+  <h1 class=date>Months containing hours</h1>
+<div class=extra> </div>
+  {% for entries_ref in entry_ref %}
 
-  <form action="{{ url_for('list2', matricule=matricule, entree=entree) }}" method=post>   
+  <form action="{{ url_for('list2', matricule=matricule, entry_ref=entry_ref) }}" method=post style="text-align: center;">   
 		
-		<d1 class="center">
-      <dd><input type=hidden name="id_" value="{{ entrees[1] }}">
-      <dd><input type=hidden name="annee" value="{{ entrees[2] }}">
-      <dd><input type=hidden name="mois_chiffre" value="{{ entrees[3] }}">
-			<dd><input type=submit name="mois" value="{{ entrees[0] }}">
+		<d1 >
+      <input type=hidden name="id_" value="{{ entries_ref[1] }}">
+      <input type=hidden name="year_ref" value="{{ entries_ref[2] }}">
+      <input type=hidden name="month_ref_number" value="{{ entries_ref[3] }}">
+		<dd><input type=submit name="mois" value="{{ entries_ref[0] }}" class=button>
 
 		</d1>
 	</form>
+    <div class=extra> </div>
   {% else %}
         <li>No data for this employee.</li>
 	{% endfor %}
+ </div>
 {% endblock %}
