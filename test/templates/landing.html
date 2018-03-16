@@ -1,15 +1,21 @@
+<!--PAQE19528909-->
 {% extends "layout.html" %}
-
 {% block content %}
-
-{% if erreur %} <p class=erreur><strong>Error: </strong>{{ erreur }}{% endif %}
-	
-  <form action="{{ url_for('landing') }}" method=post>   
-		
-		<d1 class="center">
-			<dt>Matricule:
-			<dd><input type=text name=matricule><input type=submit value=Allez>
-		</d1>
-	</form>
-
+        <div class=page>
+        {% if error %} <p class="error"><strong>Error: </strong>{{ error }}{% endif %}
+          <div class=entries2>
+            <form action="{{ url_for('landing') }}" method=post class=add-entry>   
+		        <div>
+                <d1>
+                <dt><h1 class=date>Login</h1>
+                
+                <dd>
+                <h2>Enter your employee number below</h2>
+                <input type=text name='matricule' "style=height: 20px;">
+                <input type=submit value=Submit class=button5>
+                </d1>
+                </div>
+            </form>
+           </div>
+         </div>
 {% endblock %}
