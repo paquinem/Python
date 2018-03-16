@@ -2,22 +2,21 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<div class=page>
+<h1 class=date>Add time</h1>
+  {% if error %} <p class=error><strong>Error: </strong>{{ error }}{% endif %}
 
-  {% if erreur %} <p class=erreur><strong>Error: </strong>{{ erreur }}{% endif %}
-
-  <form action="{{ url_for('add', matricule=matricule, date=date)  }}" method=post>   
+  <form action="{{ url_for('add', matricule=matricule, date=date)  }}" method=post class=extra>   
 		
-		<d1 class="center">
-			<dt>Projet number:
-			<dd><input type=number name=numeroProjet required class="no-spinners"/>
-			<dt>Time spent (in minutes):	
-			<dd><input type=number name=nombreMinutes required class="no-spinners"/>	
-			<dd><input type=submit value=Ajouter>
-		</d1>
+            <dd>
+			<h2>Project number:</h2>
+			<dd><input type=number name=numeroproject required/>
+            <dd>
+			<h2>Time spent (in minutes):	</h2>
+			<dd><input type=number name=nombreMinutes required/>	
+			<dd><input type=submit value=Add! class=button5>
+
 	</form>
-	
+</div>
 
 {% endblock %}
-		
-		
-
