@@ -1,12 +1,14 @@
-TP effectue par EMILIE PAQUIN
-PAQE19528909
+EM PAIN - Time Sheet program 
+Python
+Flask
+SQLite3
+Jinja2
+HTML
+CSS
 
-ETAPES A SUIVRE:
+Download the TP1 folder
+From TP1 folder: export FLASK_APP=index.py
+If no DB file: flask initdb
+finally: flask run
 
-
-0. Etre dans le dossier TP1
-1. sur ligne de commande: export FLASK_APP=index.py
-2. Si la db.db n'est pas presente: flask initdb
-3. flask run
-4. ATTN : S'assurer qu'il y a un fichier vide nomme __init__.py au meme niveau que index.py
-
+ATTN: Be sure to have __init__.py in the same level as index.py
