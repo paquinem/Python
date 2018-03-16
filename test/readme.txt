@@ -6,7 +6,7 @@ Jinja2
 HTML
 CSS
 
-Download the TP1 folder
+Download the test folder
 From TP1 folder: export FLASK_APP=index.py
 If no DB file: flask initdb
 finally: flask run
