@@ -1,0 +1,57 @@
+{% extends "calendar_layout.html" %}
+{% block content %}
+
+<div class="wrapper">
+  <main>   
+ 
+    <div class="calendar">
+    {% if entries_ref|length != 0 %}
+      <div class="week_day">
+        <div>sun</div>
+        <div>mon</div>
+        <div>tue</div>
+        <div>wed</div>
+        <div>thu</div>
+        <div>fri</div>
+        <div>sat</div>
+      </div>
+      <div class="week">
+      
+        {% for entry_ref in entries_ref %}
+          {% if loop.index == 1 %}
+            {% for i in range(1, start) %}
+              <div class="calendar_day day">{{ '' }}</div>
+            {% endfor %}
+            {% if entry_ref[1] == 'no data' %}
+              <div class="calendar_day day">{{ entry_ref[0] }}</div>
+            {% else %}
+              <div class="calendar_day day">{{ entry_ref[0] }} <br><br><a href="{{ url_for('day', matricule=matricule, date_du_jour= (month_ref+'-'+entry_ref[0]|string) )}}">{{ entry_ref[1] }}</a></div>
+            {% endif %}
+          {% else %}
+            {% if entry_ref[1] == 'no data' %}
+              <div class="calendar_day day">{{ entry_ref[0] }}</div>
+            {% else %}
+              <div class="calendar_day day">{{ entry_ref[0] }} <br><br><a href="{{ url_for('day', matricule=matricule, date_du_jour= (month_ref+'-'+entry_ref[0]|string) )}}">{{ entry_ref[1] }}</a></div>
+            {% endif %}
+          {% endif %}  
+        {% endfor %}     
+      </div>
+    {% else %} 
+      {{ 'No data found for this month..' }}      
+    {% endif %}  
+    </div>
+  </main>
+  <sidebar>
+    <div class="logo"><span style="font-size:72px">{{year_ref}}</span></div>
+    <nav class="menu">
+    <div class="menu_item"><span style="font-size:30px">{{month_ref_lettre}}</span></div>
+      <a class="menu_item" href="{{ url_for('month2', matricule=matricule, month_ref=month_ref_prev)}}">
+        <span class="menu_text">&#10094; previous </span>
+      </a>
+      <a class="menu_item" href="{{ url_for('month2', matricule=matricule, month_ref=month_ref_next)}}">
+        <span class="menu_text">next &#10095;</span>
+      </a>
+  </sidebar>
+</div>
+ 
+{% endblock %}
