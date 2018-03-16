@@ -1,21 +1,18 @@
-
 {% extends "layout.html" %}
 
 {% block content %}
+<div class=page>
+<h1 class=date>Update</h1>
+  {% if error %} <p class=error><strong>Error: </strong>{{ error }}{% endif %}
 
-  {% if erreur %} <p class=erreur><strong>Error: </strong>{{ erreur }}{% endif %}
-
-  <form action="{{ url_for('update', matricule=matricule, date_du_jour=date_du_jour, id_=id_) }}" method=post>   
+  <form action="{{ url_for('update', matricule=matricule, date_du_jour=date_du_jour, id_=id_) }}" method=post class=extra>   
 		
-		<d1 class="center">
-			<dt>New value for time (in minutes):	
-			<dd><input type=number name=nombreMinutes required class="no-spinners">	
-			<dd><input type=submit value=Sauvegarder>
-		</d1>
+            <dd>
+			<h2>New value for time (in minutes):	</h2>
+			<dd><input type=number name=nombreMinutes required>	
+			<dd><input type=submit value=Save class=button5>
+
 	</form>
 	
-
+</div>
 {% endblock %}
-		
-		
-
