@@ -7,7 +7,7 @@ HTML
 CSS
 
 Download the test folder
-From TP1 folder: export FLASK_APP=index.py
+From test folder: export FLASK_APP=index.py
 If no DB file: flask initdb
 finally: flask run
 
