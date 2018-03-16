@@ -1,41 +1,43 @@
-
+<!--PAQE19528909-->
 {% extends "layout.html" %}
 
 {% block content %}
-  <div class="left">
-		<a href="{{ url_for('list2', matricule=matricule, tuple_mois_id=tuple_mois_id)}}">Liste rapide</a>
-  </div>
-  <div class="center">
-		<ul>
-    <li><a href="{{ url_for('day', matricule=matricule, date_du_jour=prev)}}"><input type=button value='<'></a> <span class="date"> {{ date_du_jour }} </span> <a href="{{ url_for('day', matricule=matricule, date_du_jour=next)}}"><input type=button name=next value='>'></a>
-			
-    </ul>
-
-  <ul>
-
-	{% for entry in entries %}
-		<div>
-			<li><h2>Numero de projet: {{entry[0]}}</h2> Minutes travaillees: {{entry[1]}}
-				<form action="{{ url_for('delete', matricule=matricule, id_=entry[2] ) }}" method=post>
-           <input type="submit" value="Delete" name="{{entry[2]}}"/>
-       </form>
-				
-				<a href="{{ url_for('update', matricule=matricule, date_du_jour=date_du_jour, id_=entry[2]) }}"><input type=submit value='Editer' name="{{entry[2]}}"></a>
-
-		
-	{% else %}
-			<li>Aucun temps pour ce jour.
-	{% endfor %}
-		</div>
-				<div class=center>
-					<a href="{{ url_for('add', matricule=matricule, date=date_du_jour ) }}"><input type="button" value="Ajouter"/></a>
-
-           
-
-	      
+  <div class="page">
+  <h1 class=date>On this day</h1>
+    <div class="left">
+      <a href="{{ url_for('list2', matricule=matricule, tuple_month_ref_id=tuple_month_ref_id)}}">Monthly Overview</a>
     </div>
+
+    <div class="entries" style="text-align: center;">
+	  <ul class=entries>
+        <li><a href="{{ url_for('day', matricule=matricule, date_du_jour=prev)}}"><input type=button value='<' class=button4></a> 
+        <span class=date> {{ date_du_jour }} </span> 
+        <a href="{{ url_for('day', matricule=matricule, date_du_jour=next)}}"><input type=button value='>' class=button4></a>	
+      </ul>
+          <div class=extra>
+    </div>
+    <ul class=entries>
+	{% for entry in entries %}
+      <div>
+		<li><h2>Project number: {{entry[0]}}</h2> <h3>Time worked: {{entry[1]}} minutes</h3>
+		  <form action="{{ url_for('delete', matricule=matricule, id_=entry[2] ) }}" method=post>
+            <input type="submit" value="Delete" name="{{entry[2]}}" class=button3 />
+          </form>
+          <br>
+          <a href="{{ url_for('update', matricule=matricule, date_du_jour=date_du_jour, id_=entry[2]) }}" ><input type=submit value='Edit' name="{{entry[2]}}" class=button5></a>
+		  <div class=extra>		
+		    
+          </div>
+	{% else %}
+	  <li>No data entered for this day.
+	{% endfor %}
+    <div>
+	    <a href="{{ url_for('add', matricule=matricule, date=date_du_jour ) }}"><input type="button" value="Add Time" class=button5 style="float: right;"/></a>      
+      </div>
+	  </div>
+	  
+    </div>
+  </div>
 
 {% endblock %}
 		
-		
-
